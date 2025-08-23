@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -19,14 +20,19 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
+        'birthday',
+        'profile_photo',
+        'about_me',
+        'is_admin',
     ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var list<string>
+     * @var array<string, string>
      */
     protected $hidden = [
         'password',
@@ -43,6 +49,32 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'birthday' => 'date',
+            'is_admin' => 'boolean',
         ];
+    }
+
+    /**
+     * Check if user is admin
+     */
+    public function isAdmin(): bool
+    {
+        return $this->is_admin;
+    }
+
+    /**
+     * Get user's news items
+     */
+    public function newsItems(): HasMany
+    {
+        return $this->hasMany(NewsItem::class);
+    }
+
+    /**
+     * Get user's FAQ categories
+     */
+    public function faqCategories(): HasMany
+    {
+        return $this->hasMany(FaqCategory::class);
     }
 }

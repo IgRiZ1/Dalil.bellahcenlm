@@ -19,6 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Policies worden automatisch gedetecteerd in Laravel 12
     }
 }
