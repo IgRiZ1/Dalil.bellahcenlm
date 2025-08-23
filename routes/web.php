@@ -13,10 +13,6 @@ use App\Http\Controllers\DashboardController;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Hier worden alle web routes voor de applicatie gedefinieerd.
-| Deze routes worden geladen door de RouteServiceProvider.
-|
 */
 
 // Publieke routes
@@ -24,26 +20,22 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Authenticatie routes
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
-Route::get('/forgot-password', [AuthController::class, 'showForgotPassword'])->name('password.request');
-Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.email');
+// Authenticatie routes (alleen voor guests)
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::get('/forgot-password', [AuthController::class, 'showForgotPassword'])->name('password.request');
+    Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.email');
+});
 
-// Nieuws routes
+// Publieke content routes
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/{newsItem}', [NewsController::class, 'show'])->name('news.show');
-
-// FAQ routes
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
-
-// Contact routes
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-
-// Profiel routes (publiek toegankelijk)
 Route::get('/profile/{username}', [ProfileController::class, 'show'])->name('profile.show');
 
 // Beveiligde routes (alleen voor ingelogde gebruikers)
@@ -60,9 +52,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
     
-    // Admin routes (alleen voor admins - gecontroleerd in controllers)
-    Route::prefix('admin')->name('admin.')->group(function () {
+    // Admin routes (met admin middleware)
+    Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
+        // Dashboard
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+        
+        // Gebruikersbeheer
         Route::get('/users', [AdminController::class, 'users'])->name('users');
         Route::get('/users/create', [AdminController::class, 'createUser'])->name('users.create');
         Route::post('/users', [AdminController::class, 'storeUser'])->name('users.store');
