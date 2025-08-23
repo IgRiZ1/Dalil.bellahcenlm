@@ -38,6 +38,13 @@
             </ul>
             
             <ul class="navbar-nav">
+                <!-- Dark Mode Toggle -->
+                <li class="nav-item d-flex align-items-center">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                </li>
+                
                 @guest
                     <!-- Niet ingelogde gebruikers -->
                     <li class="nav-item">

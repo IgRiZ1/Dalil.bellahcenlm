@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
 {
@@ -76,5 +77,14 @@ class User extends Authenticatable
     public function faqCategories(): HasMany
     {
         return $this->hasMany(FaqCategory::class);
+    }
+
+    /**
+     * Get FAQ questions this user has liked (Many-to-Many relationship)
+     */
+    public function likedFaqQuestions(): BelongsToMany
+    {
+        return $this->belongsToMany(FaqQuestion::class, 'user_faq_question_likes')
+                    ->withTimestamps();
     }
 }
