@@ -15,8 +15,8 @@ class FaqController extends Controller
      */
     public function index()
     {
-        $categories = FaqCategory::with('questions')->get();
-        return view('faq.index', compact('categories'));
+        $faqCategories = FaqCategory::with('questions')->get();
+        return view('faq.index', compact('faqCategories'));
     }
 
     /**
@@ -28,7 +28,7 @@ class FaqController extends Controller
             abort(403, 'U heeft geen toegang tot deze pagina.');
         }
         
-        return view('faq.create-category');
+        return view('admin.faq.categories.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class FaqController extends Controller
             abort(403, 'U heeft geen toegang tot deze pagina.');
         }
         
-        return view('faq.edit-category', compact('faqCategory'));
+        return view('admin.faq.categories.edit', compact('faqCategory'));
     }
 
     /**
@@ -122,8 +122,8 @@ class FaqController extends Controller
             abort(403, 'U heeft geen toegang tot deze pagina.');
         }
         
-        $categories = FaqCategory::all();
-        return view('faq.create-question', compact('categories'));
+        $faqCategories = FaqCategory::all();
+        return view('admin.faq.questions.create', compact('faqCategories'));
     }
 
     /**
@@ -165,8 +165,8 @@ class FaqController extends Controller
             abort(403, 'U heeft geen toegang tot deze pagina.');
         }
         
-        $categories = FaqCategory::all();
-        return view('faq.edit-question', compact('faqQuestion', 'categories'));
+        $faqCategories = FaqCategory::all();
+        return view('admin.faq.questions.edit', compact('faqQuestion', 'faqCategories'));
     }
 
     /**

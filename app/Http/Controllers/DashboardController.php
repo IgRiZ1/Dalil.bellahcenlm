@@ -11,14 +11,6 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     /**
-     * Constructor - alleen ingelogde gebruikers kunnen deze controller gebruiken
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
      * Toon gebruikers dashboard
      */
     public function index()

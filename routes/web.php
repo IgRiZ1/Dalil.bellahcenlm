@@ -52,8 +52,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
     
-    // Admin routes (met admin middleware)
-    Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
+    // Admin routes (admin checks worden gedaan in de controllers)
+    Route::prefix('admin')->name('admin.')->group(function () {
         // Dashboard
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         

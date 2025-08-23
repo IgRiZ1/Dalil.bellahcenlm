@@ -12,14 +12,6 @@ use Illuminate\Validation\Rules\Password;
 class AdminController extends Controller
 {
     /**
-     * Constructor - alleen admins kunnen deze controller gebruiken
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
      * Check of gebruiker admin is
      */
     private function checkAdmin()
