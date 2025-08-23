@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg modern-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <i class="fas fa-home me-2"></i>
+            <i class="fas fa-globe me-2"></i>
             Mijn Website
         </a>
         
@@ -14,7 +14,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
                         <i class="fas fa-home me-1"></i>
-                        Home
+                        Startpagina
                     </a>
                 </li>
                 <li class="nav-item">

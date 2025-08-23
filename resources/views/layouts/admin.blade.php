@@ -30,30 +30,48 @@
                                 Dashboard
                             </a>
                         </li>
+                        
+                        <!-- Gebruikersbeheer -->
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('admin.users') }}">
                                 <i class="fas fa-users me-2"></i>
                                 Gebruikers
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('admin.news.create') }}">
+                        
+                        <!-- Nieuwsbeheer -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 <i class="fas fa-newspaper me-2"></i>
                                 Nieuws
                             </a>
+                            <ul class="dropdown-menu bg-dark border-0">
+                                <li><a class="dropdown-item text-white" href="{{ route('news.index') }}">Alle Artikelen</a></li>
+                                <li><a class="dropdown-item text-white" href="{{ route('admin.news.create') }}">Nieuw Artikel</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('admin.faq.categories.create') }}">
+                        
+                        <!-- FAQ Beheer -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 <i class="fas fa-question-circle me-2"></i>
                                 FAQ
                             </a>
+                            <ul class="dropdown-menu bg-dark border-0">
+                                <li><a class="dropdown-item text-white" href="{{ route('faq.index') }}">Alle FAQ's</a></li>
+                                <li><a class="dropdown-item text-white" href="{{ route('admin.faq.categories.create') }}">Nieuwe Categorie</a></li>
+                                <li><a class="dropdown-item text-white" href="{{ route('admin.faq.questions.create') }}">Nieuwe Vraag</a></li>
+                            </ul>
                         </li>
+                        
+                        <!-- Contact Berichten -->
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('admin.contact.index') }}">
                                 <i class="fas fa-envelope me-2"></i>
-                                Contact
+                                Contact Berichten
                             </a>
                         </li>
+                        
                         <li class="nav-item mt-3">
                             <a class="nav-link text-white" href="{{ route('dashboard') }}">
                                 <i class="fas fa-arrow-left me-2"></i>

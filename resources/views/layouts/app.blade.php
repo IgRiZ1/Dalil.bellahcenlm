@@ -10,6 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -18,18 +22,20 @@
     @include('components.navbar')
     
     <!-- Hoofdinhoud -->
-    <main class="py-4">
+    <main class="py-3">
         <div class="container">
             <!-- Succes en foutmeldingen -->
             @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <div class="modern-alert modern-alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-check-circle me-2"></i>
                     {{ session('success') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
             @endif
             
             @if(session('error'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="modern-alert modern-alert-danger alert-dismissible fade show" role="alert">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
                     {{ session('error') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
@@ -41,15 +47,18 @@
     </main>
     
     <!-- Footer -->
-    <footer class="bg-dark text-light py-4 mt-5">
+    <footer class="modern-footer">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h5>Mijn Website</h5>
-                    <p>Een dynamische website gebouwd met Laravel</p>
+                    <h6 style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.25rem;">
+                        <i class="fas fa-globe me-2"></i>
+                        Mijn Website
+                    </h6>
+                    <p class="text-muted mb-0" style="font-size: 0.875rem;">Een moderne, gebruiksvriendelijke website</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p>&copy; {{ date('Y') }} Mijn Website. Alle rechten voorbehouden.</p>
+                    <p class="text-muted mb-1" style="font-size: 0.875rem;">&copy; {{ date('Y') }} Alle rechten voorbehouden</p>
                 </div>
             </div>
         </div>

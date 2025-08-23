@@ -5,19 +5,19 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1>
-                <i class="fas fa-tachometer-alt me-2"></i>
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h1 style="color: var(--primary-color); font-weight: 700;">
+                <i class="fas fa-tachometer-alt me-3"></i>
                 Dashboard
             </h1>
             <div>
-                <a href="{{ route('profile.edit') }}" class="btn btn-outline-primary me-2">
-                    <i class="fas fa-edit me-1"></i>
+                <a href="{{ route('profile.edit') }}" class="btn-modern-secondary me-3">
+                    <i class="fas fa-edit"></i>
                     Profiel Bewerken
                 </a>
                 @if($isAdmin)
-                    <a href="{{ route('admin.dashboard') }}" class="btn btn-primary">
-                        <i class="fas fa-cog me-1"></i>
+                    <a href="{{ route('admin.dashboard') }}" class="btn-modern-primary">
+                        <i class="fas fa-cog"></i>
                         Beheer
                     </a>
                 @endif
@@ -28,19 +28,25 @@
 
 <div class="row">
     <!-- Welkomstkaart -->
-    <div class="col-md-12 mb-4">
-        <div class="card bg-primary text-white">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <i class="fas fa-user me-2"></i>
-                    Welkom, {{ $user->name }}!
-                </h4>
-                <p class="card-text">
-                    U bent ingelogd als {{ $user->username }}. 
-                    @if($user->isAdmin)
-                        U heeft beheerder rechten en kunt alle functionaliteiten gebruiken.
+    <div class="col-md-12 mb-5">
+        <div class="modern-card" style="background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); color: white; border: none;">
+            <div class="modern-card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white bg-opacity-20 rounded-circle p-3 me-4">
+                        <i class="fas fa-user fa-2x"></i>
+                    </div>
+                    <div>
+                        <h3 class="mb-1">Welkom terug, {{ $user->name }}!</h3>
+                        <p class="mb-0 opacity-75">{{ $user->username }} • Laatste login: {{ now()->format('d M Y') }}</p>
+                    </div>
+                </div>
+                <p class="mb-0 opacity-90">
+                    @if($user->isAdmin())
+                        <i class="fas fa-shield-alt me-2"></i>
+                        U heeft beheerder rechten en kunt alle functionaliteiten van de website gebruiken.
                     @else
-                        U kunt uw profiel bewerken en de website verkennen.
+                        <i class="fas fa-star me-2"></i>
+                        Welkom bij uw persoonlijke dashboard. Hier kunt u uw profiel beheren en de website verkennen.
                     @endif
                 </p>
             </div>
@@ -49,14 +55,14 @@
     
     <!-- Recente Nieuws -->
     <div class="col-md-6 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">
+        <div class="modern-card">
+            <div class="modern-card-header">
+                <h5 class="mb-0" style="color: var(--primary-color); font-weight: 600;">
                     <i class="fas fa-newspaper me-2"></i>
                     Recente Nieuws
                 </h5>
             </div>
-            <div class="card-body">
+            <div class="modern-card-body">
                 @if($recentNews->count() > 0)
                     <div class="list-group list-group-flush">
                         @foreach($recentNews as $news)
@@ -69,8 +75,9 @@
                             </a>
                         @endforeach
                     </div>
-                    <div class="text-center mt-3">
-                        <a href="{{ route('news.index') }}" class="btn btn-outline-primary">
+                    <div class="text-center mt-4">
+                        <a href="{{ route('news.index') }}" class="btn-modern-primary">
+                            <i class="fas fa-arrow-right"></i>
                             Bekijk Alle Nieuws
                         </a>
                     </div>
@@ -83,14 +90,14 @@
     
     <!-- FAQ Categorieën -->
     <div class="col-md-6 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">
+        <div class="modern-card">
+            <div class="modern-card-header">
+                <h5 class="mb-0" style="color: var(--primary-color); font-weight: 600;">
                     <i class="fas fa-question-circle me-2"></i>
                     FAQ Categorieën
                 </h5>
             </div>
-            <div class="card-body">
+            <div class="modern-card-body">
                 @if($faqCategories->count() > 0)
                     <div class="list-group list-group-flush">
                         @foreach($faqCategories as $category)
@@ -101,8 +108,9 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="text-center mt-3">
-                        <a href="{{ route('faq.index') }}" class="btn btn-outline-success">
+                    <div class="text-center mt-4">
+                        <a href="{{ route('faq.index') }}" class="btn-modern-secondary">
+                            <i class="fas fa-arrow-right"></i>
                             Bekijk Alle FAQ's
                         </a>
                     </div>
@@ -115,48 +123,42 @@
 </div>
 
 @if($isAdmin && $adminStats)
-<div class="row">
+<div class="row mt-4">
     <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">
-                    <i class="fas fa-chart-bar me-2"></i>
-                    Beheerder Statistieken
-                </h5>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-3 text-center">
-                        <div class="border rounded p-3">
-                            <i class="fas fa-users fa-2x text-primary mb-2"></i>
-                            <h4>{{ $adminStats['totalUsers'] }}</h4>
-                            <p class="text-muted">Totaal Gebruikers</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="border rounded p-3">
-                            <i class="fas fa-newspaper fa-2x text-success mb-2"></i>
-                            <h4>{{ $adminStats['totalNews'] }}</h4>
-                            <p class="text-muted">Totaal Nieuws</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="border rounded p-3">
-                            <i class="fas fa-envelope fa-2x text-info mb-2"></i>
-                            <h4>{{ $adminStats['totalContacts'] }}</h4>
-                            <p class="text-muted">Contact Berichten</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="border rounded p-3">
-                            <a href="{{ route('admin.dashboard') }}" class="text-decoration-none">
-                                <i class="fas fa-cog fa-2x text-warning mb-2"></i>
-                                <h4 class="text-warning">Beheer</h4>
-                                <p class="text-muted">Dashboard</p>
-                            </a>
-                        </div>
-                    </div>
+        <h4 class="mb-4" style="color: var(--text-primary); font-weight: 600;">
+            <i class="fas fa-chart-bar me-2"></i>
+            Beheerder Statistieken
+        </h4>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <div class="stat-card" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                    <i class="fas fa-users fa-2x mb-3"></i>
+                    <div class="stat-number">{{ $adminStats['totalUsers'] }}</div>
+                    <div class="stat-label">Totaal Gebruikers</div>
                 </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stat-card" style="background: linear-gradient(135deg, #10b981, #059669);">
+                    <i class="fas fa-newspaper fa-2x mb-3"></i>
+                    <div class="stat-number">{{ $adminStats['totalNews'] }}</div>
+                    <div class="stat-label">Totaal Nieuws</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stat-card" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                    <i class="fas fa-envelope fa-2x mb-3"></i>
+                    <div class="stat-number">{{ $adminStats['totalContacts'] }}</div>
+                    <div class="stat-label">Contact Berichten</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a href="{{ route('admin.dashboard') }}" class="text-decoration-none">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <i class="fas fa-cog fa-2x mb-3"></i>
+                        <div class="stat-number">Admin</div>
+                        <div class="stat-label">Dashboard</div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
