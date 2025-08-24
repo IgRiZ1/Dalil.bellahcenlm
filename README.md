@@ -200,16 +200,16 @@ npm run dev        # Activate Vite cyber-compilation
 **Cyber Identity**: DALIL.BELLAHCEN  
 **Neural ID**: [Student Matrix Code]  
 **Mission**: Backend Web Advanced Protocols  
-**Neural Institute**: Erasmushogeschool Brussel - Cyber Division  
+**Neural Institute**: Erasmushogeschool Brussel  
 **Deployment Date**: Augustus 2025  
 
 ## 📜 NEURAL LICENSE
 
-Dit cyber-tech platform is ontwikkeld voor educatieve neural network training als onderdeel van de Backend Web Advanced Protocols missie.
+Dit  platform is ontwikkeld voor educatieve neural network training als onderdeel van de Backend Web Advanced Protocols missie.
 
 ---
 
-**⚠️ CLASSIFICATIE NOTICE**: Dit is een herexamen cyber-project. Alle neural functionalities zijn volledig geïmplementeerd volgens de geavanceerde protocol vereisten.
+**⚠️ CLASSIFICATIE NOTICE**: Dit is een herexamen . Alle neural functionalities zijn volledig geïmplementeerd volgens de geavanceerde protocol vereisten.
 
 🔋 **STATUS**: ONLINE - ALLE SYSTEMEN OPERATIONEEL
 🛡️ **SECURITY LEVEL**: MAXIMUM ENCRYPTION ENABLED
