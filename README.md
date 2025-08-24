@@ -164,19 +164,19 @@ npm run dev        # Activate Vite cyber-compilation
 ## 📸 CYBER INTERFACE PREVIEWS
 
 ### 🏠 Main Portal Interface
-![Cyber Homepage](screenshots/cyber-homepage.png)
+![Cyber Homepage]
 
 ### 📊 Neural Dashboard
-![Dashboard](screenshots/neural-dashboard.png)
+![Dashboard]
 
 ### 💎 Command Center
-![Admin Panel](screenshots/command-center.png)
+![Admin Panel]
 
 ### 📡 Data Feed Network
-![News Interface](screenshots/data-feed.png)
+![News Interface]
 
 ### 🗄️ Knowledge Archive
-![FAQ Archive](screenshots/knowledge-archive.png)
+![FAQ Archive]
 
 ## 🔗 NEURAL NETWORK RESOURCES
 
@@ -193,7 +193,7 @@ npm run dev        # Activate Vite cyber-compilation
 - [Rajdhani Font](https://fonts.google.com/specimen/Rajdhani) - Cyber UI Typography
 
 ### 🤖 AI Neural Assistance
-- Dit platform is ontwikkeld met geavanceerde AI neural assistance voor code generation en cyber-tech documentatie
+- AI heeft geholpen met documentatie, README en stijlen
 
 ## 👨‍💻 NEURAL ARCHITECT
 
@@ -201,7 +201,7 @@ npm run dev        # Activate Vite cyber-compilation
 **Neural ID**: [Student Matrix Code]  
 **Mission**: Backend Web Advanced Protocols  
 **Neural Institute**: Erasmushogeschool Brussel - Cyber Division  
-**Deployment Date**: Augustus 2024  
+**Deployment Date**: Augustus 2025  
 
 ## 📜 NEURAL LICENSE
 

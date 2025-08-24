@@ -1,18 +1,20 @@
 @extends('layouts.app')
 
-@section('title', 'Contact')
+@section('title', 'Contact - Mijn Dagboek')
 
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-8">
-        <div class="card">
-            <div class="card-header bg-info text-white">
-                <h1 class="text-center mb-0">
-                    <i class="fas fa-envelope me-2"></i>
-                    Contact
+        <div class="journal-card">
+            <div class="text-center mb-4">
+                <i class="fas fa-envelope fa-4x mb-3" style="color: var(--text-accent);"></i>
+                <h1 class="journal-title mb-2">
+                    Neem Contact Op
                 </h1>
+                <p class="text-muted" style="font-family: 'Georgia', serif;">
+                    Deel je gedachten, vragen of ideeën met mij
+                </p>
             </div>
-            <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
                         <h4>Neem Contact Op</h4>

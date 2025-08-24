@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg modern-navbar">
     <div class="container">
-        <a class="navbar-brand neon-pulse" href="{{ route('home') }}">
-            <i class="fas fa-microchip me-2"></i>
-            CYBER.NL
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <i class="fas fa-book-open me-2"></i>
+            Dagboek
         </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -13,54 +13,33 @@
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-terminal me-1"></i>
-                        SYSTEEM
+                        <i class="fas fa-home me-1"></i>
+                        Home
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('news.index') }}">
-                        <i class="fas fa-satellite-dish me-1"></i>
-                        DATA-FEED
+                        <i class="fas fa-newspaper me-1"></i>
+                        Nieuws
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('faq.index') }}">
-                        <i class="fas fa-database me-1"></i>
-                        ARCHIEF
+                        <i class="fas fa-question-circle me-1"></i>
+                        Veelgestelde Vragen
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact.show') }}">
-                        <i class="fas fa-broadcast-tower me-1"></i>
-                        VERBINDING
+                        <i class="fas fa-envelope me-1"></i>
+                        Contact
                     </a>
                 </li>
             </ul>
             
             <ul class="navbar-nav">
-                <!-- Cyber Mode Toggle -->
-                <li class="nav-item d-flex align-items-center">
-                    <button class="theme-toggle floating" id="themeToggle" title="Activeer Cyber Modus">
-                        <i class="fas fa-bolt" id="themeIcon"></i>
-                    </button>
-                </li>
-                
-                @guest
-                    <!-- Niet ingelogde gebruikers -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">
-                            <i class="fas fa-key me-1"></i>
-                            TOEGANG
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">
-                            <i class="fas fa-user-shield me-1"></i>
-                            REGISTRATIE
-                        </a>
-                    </li>
-                @else
-                    <!-- Ingelogde gebruikers -->
+                @auth
+                    <!-- Ingelogde gebruikers - alleen navigatie items -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             <i class="fas fa-user me-1"></i>
@@ -94,19 +73,9 @@
                                     </a>
                                 </li>
                             @endif
-                            <li><hr class="dropdown-divider"></li>
-                            <li>
-                                <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item">
-                                        <i class="fas fa-sign-out-alt me-2"></i>
-                                        Uitloggen
-                                    </button>
-                                </form>
-                            </li>
                         </ul>
                     </li>
-                @endguest
+                @endauth
             </ul>
         </div>
     </div>

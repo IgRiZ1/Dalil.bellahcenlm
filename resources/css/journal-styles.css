@@ -1,0 +1,168 @@
+/* JOURNAL NAVBAR STYLING */
+.modern-navbar {
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--ink-border);
+    box-shadow: var(--shadow-paper);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+.modern-navbar .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-accent);
+    font-style: italic;
+}
+
+.modern-navbar .navbar-brand:hover {
+    color: var(--primary-color);
+}
+
+.modern-navbar .nav-link {
+    font-family: 'Georgia', serif;
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0.7rem 1rem;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-smooth);
+    position: relative;
+}
+
+.modern-navbar .nav-link:hover,
+.modern-navbar .nav-link.active {
+    color: var(--text-accent);
+    background: rgba(139, 69, 19, 0.1);
+}
+
+/* JOURNAL FOOTER STYLING */
+.modern-footer {
+    background: var(--bg-elevated);
+    border-top: 2px solid var(--ink-border);
+    padding: 2rem 0 1rem;
+    margin-top: 3rem;
+    box-shadow: var(--shadow-paper);
+    position: relative;
+}
+
+.modern-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: var(--text-accent);
+    opacity: 0.6;
+}
+
+/* JOURNAL FORM STYLING */
+.modern-form-control {
+    background: var(--bg-card);
+    border: var(--border-classic);
+    border-radius: var(--border-radius);
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    color: var(--text-primary);
+    transition: all var(--transition-smooth);
+}
+
+.modern-form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.25);
+    background: var(--bg-card);
+}
+
+.modern-form-control::placeholder {
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+.modern-form-label {
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    color: var(--text-accent);
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 1rem;
+}
+
+/* JOURNAL ALERTS */
+.modern-alert {
+    border: var(--border-classic);
+    border-radius: var(--border-radius);
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid;
+    background: var(--paper-bg);
+    box-shadow: var(--shadow-paper);
+}
+
+.modern-alert-success {
+    border-left-color: var(--accent-color);
+    background: rgba(47, 79, 79, 0.05);
+}
+
+.modern-alert-danger {
+    border-left-color: var(--danger-color);
+    background: rgba(160, 82, 45, 0.05);
+}
+
+.modern-alert-warning {
+    border-left-color: var(--warning-color);
+    background: rgba(205, 133, 63, 0.05);
+}
+
+/* JOURNAL CARDS */
+.journal-card {
+    background: var(--paper-bg);
+    border: var(--border-classic);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-paper);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.journal-card::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--text-accent);
+    opacity: 0.3;
+}
+
+.journal-card h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-accent);
+    font-style: italic;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .modern-navbar .navbar-nav {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    
+    .modern-navbar .nav-link {
+        margin: 0.2rem 0;
+    }
+    
+    .modern-footer .col-md-4 {
+        text-align: center !important;
+        margin-bottom: 1rem;
+    }
+}
