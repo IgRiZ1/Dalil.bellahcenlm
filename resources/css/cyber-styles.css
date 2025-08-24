@@ -596,3 +596,161 @@
     backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid var(--glass-border);
 }
+
+/* CYBER DROPDOWN MENUS */
+.dropdown-menu {
+    background: var(--bg-card);
+    border: 2px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 255, 255, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    min-width: 250px;
+}
+
+.dropdown-item {
+    color: var(--text-secondary);
+    padding: 1rem 1.5rem;
+    font-family: 'Rajdhani', monospace;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all var(--transition-fast);
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover {
+    background: var(--glass-bg);
+    color: var(--primary-neon);
+    text-shadow: 0 0 10px var(--primary-neon);
+    transform: translateX(5px);
+    border-left: 3px solid var(--primary-neon);
+    padding-left: 1.25rem;
+}
+
+.dropdown-item:focus {
+    background: var(--glass-bg);
+    color: var(--primary-neon);
+    outline: none;
+}
+
+.dropdown-item i {
+    margin-right: 0.75rem;
+    width: 18px;
+    color: var(--text-accent);
+    transition: all var(--transition-fast);
+}
+
+.dropdown-item:hover i {
+    color: var(--primary-neon);
+    text-shadow: 0 0 5px var(--primary-neon);
+}
+
+.dropdown-divider {
+    border-top: 1px solid var(--glass-border);
+    margin: 0.5rem 0;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    height: 1px;
+}
+
+/* ADDITIONAL TEXT CONTRAST FIXES */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-neon), var(--accent-neon));
+    border: 2px solid var(--primary-neon);
+    color: var(--bg-primary);
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--accent-neon), var(--secondary-neon));
+    border-color: var(--accent-neon);
+    color: var(--bg-primary);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-neon);
+}
+
+.btn-secondary {
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    color: var(--text-primary);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-elevated);
+    border-color: var(--primary-neon);
+    color: var(--primary-neon);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--danger-neon), #cc0629);
+    border: 2px solid var(--danger-neon);
+    color: var(--text-primary);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #ff073a, var(--danger-neon));
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 7, 58, 0.5);
+    color: var(--text-primary);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--accent-neon), #2db83d);
+    border: 2px solid var(--accent-neon);
+    color: var(--bg-primary);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #2db83d, var(--accent-neon));
+    transform: scale(1.05);
+    box-shadow: var(--shadow-green);
+    color: var(--bg-primary);
+}
+
+/* INPUT PLACEHOLDERS */
+.form-control::placeholder,
+.modern-form-control::placeholder {
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+/* NAVBAR DROPDOWN TOGGLE */
+.navbar-nav .nav-link.dropdown-toggle {
+    color: var(--text-secondary);
+}
+
+.navbar-nav .nav-link.dropdown-toggle:hover {
+    color: var(--primary-neon);
+}
+
+/* GENERAL TEXT IMPROVEMENTS */
+.text-dark {
+    color: var(--text-secondary) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.bg-dark {
+    background: var(--bg-card) !important;
+}
+
+.bg-secondary {
+    background: var(--bg-secondary) !important;
+}
