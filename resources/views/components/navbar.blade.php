@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg modern-navbar">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">
-            <i class="fas fa-globe me-2"></i>
-            Mijn Website
+        <a class="navbar-brand neon-pulse" href="{{ route('home') }}">
+            <i class="fas fa-microchip me-2"></i>
+            CYBER.NL
         </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -13,35 +13,35 @@
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-home me-1"></i>
-                        Startpagina
+                        <i class="fas fa-terminal me-1"></i>
+                        SYSTEEM
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('news.index') }}">
-                        <i class="fas fa-newspaper me-1"></i>
-                        Nieuws
+                        <i class="fas fa-satellite-dish me-1"></i>
+                        DATA-FEED
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('faq.index') }}">
-                        <i class="fas fa-question-circle me-1"></i>
-                        FAQ
+                        <i class="fas fa-database me-1"></i>
+                        ARCHIEF
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact.show') }}">
-                        <i class="fas fa-envelope me-1"></i>
-                        Contact
+                        <i class="fas fa-broadcast-tower me-1"></i>
+                        VERBINDING
                     </a>
                 </li>
             </ul>
             
             <ul class="navbar-nav">
-                <!-- Dark Mode Toggle -->
+                <!-- Cyber Mode Toggle -->
                 <li class="nav-item d-flex align-items-center">
-                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
-                        <i class="fas fa-moon" id="themeIcon"></i>
+                    <button class="theme-toggle floating" id="themeToggle" title="Activeer Cyber Modus">
+                        <i class="fas fa-bolt" id="themeIcon"></i>
                     </button>
                 </li>
                 
@@ -49,14 +49,14 @@
                     <!-- Niet ingelogde gebruikers -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">
-                            <i class="fas fa-sign-in-alt me-1"></i>
-                            Inloggen
+                            <i class="fas fa-key me-1"></i>
+                            TOEGANG
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">
-                            <i class="fas fa-user-plus me-1"></i>
-                            Registreren
+                            <i class="fas fa-user-shield me-1"></i>
+                            REGISTRATIE
                         </a>
                     </li>
                 @else

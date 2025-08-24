@@ -10,10 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Inter Font -->
+    <!-- Cyber Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -51,14 +51,22 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h6 style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.25rem;">
-                        <i class="fas fa-globe me-2"></i>
-                        Mijn Website
+                    <h6 class="cyber-text" style="color: var(--primary-neon); margin-bottom: 0.5rem;">
+                        <i class="fas fa-microchip me-2"></i>
+                        CYBER.NL SYSTEEM
                     </h6>
-                    <p class="text-muted mb-0" style="font-size: 0.875rem;">Een moderne, gebruiksvriendelijke website</p>
+                    <p class="text-muted mb-0" style="font-size: 0.9rem; font-family: 'Rajdhani', monospace;">
+                        Geavanceerd Cyber-Tech Platform - Status: ONLINE
+                        <span class="status-indicator online ms-2"></span>
+                    </p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p class="text-muted mb-1" style="font-size: 0.875rem;">&copy; {{ date('Y') }} Alle rechten voorbehouden</p>
+                    <p class="text-muted mb-1 cyber-text" style="font-size: 0.875rem;">
+                        &copy; {{ date('Y') }} NEURAL NETWORK CORP
+                    </p>
+                    <p class="text-muted mb-0" style="font-size: 0.75rem; font-family: 'Rajdhani', monospace;">
+                        VERSIE 2.0.{{ date('z') }} - BUILD {{ substr(md5(date('Y-m-d')), 0, 8) }}
+                    </p>
                 </div>
             </div>
         </div>
