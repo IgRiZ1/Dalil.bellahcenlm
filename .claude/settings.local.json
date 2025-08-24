@@ -6,7 +6,8 @@
       "Bash(git commit:*)",
       "Bash(git restore:*)",
       "Bash(php artisan make:migration:*)",
-      "Bash(php artisan:*)"
+      "Bash(php artisan:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
